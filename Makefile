@@ -18,8 +18,8 @@ install: lib$(NAME).a
 	cp -f $(NAME).h $(INCLUDEDESTDIR)
 
 uninstall:
-	rm -f lib$(NAME).a $(LIBDESTDIR)
-	rm -f $(NAME).h $(INCLUDEDESTDIR)
+	rm -f lib$(NAME).a $(LIBDESTDIR)/lib$(NAME).a
+	rm -f $(NAME).h $(INCLUDEDESTDIR)/$(NAME).h
 
 clean:
 	rm *.o *.a
