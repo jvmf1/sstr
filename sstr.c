@@ -692,3 +692,9 @@ void sstr_rm_consecutive_char(sstr *str, const char ch) {
 	str->len=j;
 	str->data[j]='\0';
 }
+
+void sstr_init(sstr *str) {
+	str->len=0;
+	str->cap=0;
+	str->data=NULL;
+}
