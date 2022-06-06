@@ -14,9 +14,9 @@ void sstr_tolower(sstr *str);
 
 void sstr_toupper(sstr *str);
 
-int sstr_replace(sstr *str, const char *old, const char *new);
+int sstr_replace(sstr *str, const char *old, const char *newstr);
 
-int sstr_replace_char(sstr *str, const char old, const char new);
+int sstr_replace_char(sstr *str, const char old, const char newstr);
 
 void sstr_clear(sstr *str);
 
