@@ -77,9 +77,6 @@ int sstr_gets2(sstr *str, size_t cap_incr);
 int sstr_fgets2(sstr *str, FILE *stream, size_t cap_incr);
 int sstr_fgetsx2(sstr *str, FILE *stream, const char x, size_t cap_incr);
 
-/* removes conscultives 'ch' and 'ch' at the beginning and end */
-void sstr_trim_all(sstr *str, const char ch);
-
 /* removes 'ch' at the beginning and end */
 void sstr_trim(sstr *str, const char ch);
 

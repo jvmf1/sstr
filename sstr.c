@@ -246,31 +246,6 @@ int sstr_sset(sstr *str, const sstr *s) {
 	return 0;
 }
 
-void sstr_trim_all(sstr *str, const char ch) {
-	if (str->cap <= 1)
-		return;
-	size_t j = 0;
-	size_t i;
-	bool addchar = false;
-	for (i=0;i<str->len;i++) {
-		if (str->data[i]==ch) {
-			if (addchar==true) {
-				addchar=false;
-				str->data[j]=str->data[i];
-				j++;
-			}
-		} else {
-			addchar=true;
-			str->data[j]=str->data[i];
-			j++;
-		}
-	}
-	if (str->data[j]==ch && addchar==false)
-		j--;
-	str->len=j;
-	str->data[j]='\0';
-}
-
 void sstr_trim(sstr *str, const char ch) {
 	sstr_trim_right(str, ch);
 	sstr_trim_left(str, ch);
