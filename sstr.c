@@ -27,19 +27,6 @@ int sstr_replace_char(sstr *str, const char old, const char new) {
 	return 0;
 }
 
-int sstr_replace_charn(sstr *str, const size_t n, const char new) {
-	if (str->cap == 0)
-		return -1;
-	if (new=='\0' && n <= str->len) {
-		str->len=n;
-		str->data[n]=new;
-		return 0;
-	}
-	if (n >= str->len) return -1;
-	str->data[n]=new;
-	return 0;
-}
-
 void sstr_clear(sstr *str) {
 	str->len=0;
 	if (str->cap != 0)

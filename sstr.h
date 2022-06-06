@@ -14,9 +14,6 @@ void sstr_tolower(sstr *str);
 
 void sstr_toupper(sstr *str);
 
-/* replaces nth char */
-int sstr_replace_charn(sstr *str, const size_t n, const char new);
-
 int sstr_replace(sstr *str, const char *old, const char *new);
 
 int sstr_replace_char(sstr *str, const char old, const char new);
