@@ -87,9 +87,6 @@ void sstr_trim_right(sstr *str, const char ch);
 
 void sstr_trim_left(sstr *str, const char ch);
 
-/* calculate levenshtein distance */
-size_t sstr_distance(const sstr *str, const sstr * str2);
-
 /* sstr_*read does not close FILE or SEEK_SET back to beginning */
 sstr* sstr_fread(FILE *f);
 sstr* sstr_read(int fd);

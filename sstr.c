@@ -314,42 +314,6 @@ void sstr_trim_left(sstr *str, const char ch) {
 	str->len -= i;
 }
 
-size_t sstr_distance(const sstr *str, const sstr * str2){
-	size_t matrix[str->len + 1][str2->len + 1];
-	size_t i,j;
-	size_t delete, insert, substitute, minimum;
-	for (i = 0; i <= str->len; i++) {
-		matrix[i][0] = i;
-	}
-	for (i = 0; i <= str2->len; i++) {
-		matrix[0][i] = i;
-	}
-	for (i = 1; i <= str->len; i++) {
-
-		for (j = 1; j <= str2->len; j++) {
-
-			if (str->data[i-1] == str2->data[j-1]) {
-				matrix[i][j] = matrix[i-1][j-1];
-			}
-			else {
-
-				delete = matrix[i-1][j] + 1;
-				insert = matrix[i][j-1] + 1;
-				substitute = matrix[i-1][j-1] + 1;
-				minimum = delete;
-				if (insert < minimum) {
-					minimum = insert;
-				}
-				if (substitute < minimum) {
-					minimum = substitute;
-				}
-				matrix[i][j] = minimum;
-			}
-		}
-	}
-	return matrix[str->len][str2->len];
-}
-
 sstr* sstr_fread(FILE *f) {
 	fseek(f, 0, SEEK_END);
 	long int size = ftell(f);
