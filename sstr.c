@@ -626,5 +626,7 @@ void sstr_init(sstr *str) {
 }
 
 void sstr_end(sstr *str) {
+	str->len=0;
+	str->cap=0;
 	free(str->data);
 }
