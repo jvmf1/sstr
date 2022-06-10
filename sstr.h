@@ -29,6 +29,8 @@ void sstr_print(const sstr *str);
 
 void sstr_init(sstr *str);
 
+void sstr_end(sstr *str);
+
 sstr* sstr_create(const char *s);
 
 /* creates empty string with pre allocated capacity */
